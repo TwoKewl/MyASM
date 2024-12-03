@@ -1,6 +1,7 @@
 
 use crate::instruction::InstructionType;
 
+
 #[derive(Clone, Debug)]
 pub struct Token {
     pub token_type: TokenType,

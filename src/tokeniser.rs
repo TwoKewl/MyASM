@@ -15,6 +15,7 @@ fn instruction_from_string(value: &str) -> InstructionType {
         "MUL" => InstructionType::MUL,
         "DIV" => InstructionType::DIV,
         "LOG" => InstructionType::LOG,
+        "MOD" => InstructionType::MOD,
         _ => InstructionType::NUL
     }
 }
@@ -37,7 +38,7 @@ fn get_token(token_value: String) -> Token {
                 return Token {
                     token_type: TokenType::Integer,
                     value: token_value,
-                    instruction_type
+                    instruction_type,
                 }
             }
 
@@ -57,13 +58,13 @@ fn get_token(token_value: String) -> Token {
             Token {
                 token_type,
                 value: token_value.to_string(),
-                instruction_type
+                instruction_type,
             }
         }
         _ => Token {
                 token_type: TokenType::Instruction,
                 value: token_value.to_string(),
-                instruction_type
+                instruction_type,
             }
         
     }

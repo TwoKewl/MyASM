@@ -37,6 +37,11 @@ pub fn interpret_instructions(instructions: Vec<Instruction>) {
                 let value: i64 = registers.get(&i.operands[0]).unwrap().clone();
                 println!("{}", value);
             }
+            InstructionType::MOD => {
+                let value1: i64 = registers.get(&i.operands[1]).unwrap().clone();
+                let value2: i64 = registers.get(&i.operands[2]).unwrap().clone();
+                registers.insert(i.operands[0].clone(), value1 % value2);
+            }
             _ => {}
         }
     }

@@ -7,10 +7,11 @@ pub enum InstructionType {
     MUL,
     DIV,
     LOG,
+    MOD,
     NUL
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct Instruction {
     pub instruction: InstructionType,
     pub operands: Vec<String>

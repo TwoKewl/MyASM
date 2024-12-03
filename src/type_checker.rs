@@ -9,6 +9,9 @@ fn is_instruction(value: String) -> bool {
         "MUL" => true,
         "DIV" => true,
         "LOG" => true,
+        "MOD" => true,
+        "IFF" => true,
+        "JMP" => true,
         _ => false
     }
 }

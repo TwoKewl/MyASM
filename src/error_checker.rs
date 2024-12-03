@@ -47,7 +47,12 @@ pub fn instruction_check(instructions: Vec<Instruction>) {
             }
             InstructionType::LOG => {
                 if i.operands.len() != 1 || get_token_type(i.operands[0].clone()) != TokenType::Register {
-                    panic!("LOG instruction requires 1 operand. \nUsage: LOG <register>");
+                    panic!("LOG instruction requires 1 operand. \nUsage: LOG <source>");
+                }
+            }
+            InstructionType::MOD => {
+                if i.operands.len() != 3 || get_token_type(i.operands[0].clone()) != TokenType::Register || get_token_type(i.operands[1].clone()) != TokenType::Register || get_token_type(i.operands[2].clone()) != TokenType::Register {
+                    panic!("MOD instruction requires 3 operands. \nUsage: MOD <destination> <source1> <source2>");
                 }
             }
             _ => {}
